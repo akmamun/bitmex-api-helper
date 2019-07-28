@@ -1,16 +1,13 @@
 import json
-import bitmex
 
+import bitmex
 from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
-# result = client.Instrument.Instrument_get(filter=json.dumps({'rootSymbol': 'XBT'})).result()
-client = bitmex.bitmex(api_key=<api_key>,
-                       api_secret=<api_secret>)
-
+client = bitmex.bitmex(api_key= <api_key>, api_secret = <api_secret>)  # Write api_key and api_secret in string
 
 @app.route("/")
 def index():
@@ -31,8 +28,7 @@ def instrument():
 
 @app.route("data/position")
 def position():
-    position_data = client.Position.Position_get(
-        filter=json.dumps({'symbol': 'XBTUSD'})).result()  # position data give param error if not use filter
+    position_data = client.Position.Position_get(filter=json.dumps({'symbol': 'XBTUSD'})).result()
     return json.dumps(position_data, default=str)
 
 
