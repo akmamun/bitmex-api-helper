@@ -4,8 +4,8 @@
 ```sh
 pip install -r requirements.txt
 ```
-### Need API Key and API Secret from [Bitmex Test](https://testnet.bitmex.com/)
-- Write api_key and api_secret in [app](./src/app.py)
+### Need API Key and API Secret from [Bitmex Test](https://testnet.bitmex.com/app/apiKeys)
+- Add `api_key` and `api_secret` in [app](./src/app.py)
 #### List of Implemented Routes
 | Request | Endpoint |  Details |
 | --- | --- | --- |
